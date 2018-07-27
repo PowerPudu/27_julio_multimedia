@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>¡Neopets!</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link href="grayscale.css" rel="stylesheet">
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Neopets, mascotas virtuales.</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">¿Qué es esto?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#visualizations">Visualizaciones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+          <h1 class="mx-auto my-0 text-uppercase">¡Bienvenido!</h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">Visualización de popularidad de mascotas de Neopets.com</h2>
+          <a href="#about" class="btn btn-primary js-scroll-trigger">¡Cuentame más!</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-white mb-4">¿Alguna vez te preguntaste cuantas mascotas existen?</h2>
+            <p class="text-white-50">Neopets posee actualmente 55 especies diferentes de mascotas, se estima que a la fecha hay una cantidad total de 284.025.762 neopets. ¿Cuales son los más populares?,
+              qué porcentaje de estos millones de mascotas existentes ocupa cada uno?, ¡enterate de todos estos datos curiosos aquí!.</p>
+          </div>
+        </div>
+        <img src="img/ipad.png" class="img-fluid" alt="">
+      </div>
+    </section>
+
+    <!-- Visualizations Section -->
+    <section id="visualizations" class="projects-section bg-light">
+      <div class="container">
+
+        <!-- Featured Project Row -->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div class="col-xl-8 col-lg-7" id="principal"></div>
+          <div class="col-xl-4 col-lg-5">
+            <div class="featured-text text-center text-lg-left">
+          
+         <h4>Las estrellas</h4>
+              <p class="text-black-50 mb-0">¡¡El top 10 de los Neopets más adoptados!!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project One Row -->
+        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="col-lg-6" id="secundario_left"></div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                  <h4 class="text-white">¡Versus!</h4>
+                  <p class="mb-0 text-white-50">Aquí comparamos al Neopet Más popular, contra el más impopular.</p>
+                  <hr class="d-none d-lg-block mb-0 ml-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Two Row -->
+        <div class="row justify-content-center no-gutters">
+          <div class="col-lg-6" id="secundario_right"></div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-right">
+                  <h4 class="text-white">Los rechazados :( </h4>
+                  <p class="mb-0 text-white-50">No hay nada de malo en ser impopular, tambien podemos considerar esta como ¡"la visualización de los más creativos"!, aquí puedes visualizarlos por número de ejemplares y porcentaje respecto al resto de toooodas las demás especies.</p>
+                  <hr class="d-none d-lg-block mb-0 mr-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!--/container-->
+    </section><!--/visualizations-->
+
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        Copyright &copy; Your Website 2018
+      </div>
+    </footer>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Plugin JavaScript -->
+    <script src="vendor/font-awesome/js/all.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
+
+    <!-- Data Drive Document -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <!--primera visualización-->
+    <script>
+     var principal = d3.select("#principal")
+      .append("svg")
+      .attr("width","100%")
+      .attr("height","400")
+      .style("background-color","#BABABA");
+    
+        principal.append("text") 
+        .attr("x", 50)
+        .attr("y", 60)
+        .attr("fill","#111111")
+        .text("Shoyru, 17.502.588") 
+        
+        principal.append("text") 
+        .attr("x", 70)
+        .attr("y", 90)
+        .attr("fill","#111111")
+        .text("Kacheek, 17.288.431")
+        
+          principal.append("text") 
+        .attr("x", 90)
+        .attr("y", 120)
+        .attr("fill","#111111")
+        .text("Kougra, 15.511.143")
+        
+        
+          principal.append("text") 
+        .attr("x", 110)
+        .attr("y", 150)
+        .attr("fill","#111111")
+        .text("Lupe, 14.317.261")
+        
+          principal.append("text") 
+        .attr("x", 130)
+        .attr("y", 180)
+        .attr("fill","#111111")
+        .text("Xweetok, 13.841.019")
+        
+        principal.append("text") 
+        .attr("x", 150)
+        .attr("y", 210)
+        .attr("fill","#111111")
+        .text("Uni, 12.769.679")
+        
+        principal.append("text") 
+        .attr("x", 170)
+        .attr("y", 240)
+        .attr("fill","#111111")
+        .text("JubJub, 11.500.559")
+        
+        principal.append("text") 
+        .attr("x", 190)
+        .attr("y", 270)
+        .attr("fill","#111111")
+        .text("Eyrie, 13.841.019")
+        
+        principal.append("text") 
+        .attr("x", 210)
+        .attr("y", 300)
+        .attr("fill","#111111")
+        .text("Acara, 10.287.632")
+        
+        principal.append("text") 
+        .attr("x", 230)
+        .attr("y", 330)
+        .attr("fill","#111111")
+        .text("Gelert, 9.542.501")
+        
+        
+       
+         
+        
+    </script>
+
+    <!--segunda visualización-->
+    <script>
+      var secundario_left = d3.select("#secundario_left")
+      .append("svg")
+      .attr("width","100%")
+      .attr("height","400")
+      .style("background-color","#BABABA");
+//total
+
+      secundario_left.append("circle")
+      .attr("cx","50%")
+      .attr("cy","50%")
+      .attr("r","100")
+      .attr("fill","#F5A9D0");
+
+      secundario_left.append("text")
+      .attr("x", "50%")
+      .attr("y", "65%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','7')      
+      .text("Hay 284,025,762 en total")
+        
+//Shoyru
+
+      secundario_left.append("circle")
+      .attr("cx","20%")
+      .attr("cy","50%")
+      .attr("r","6.16")
+      .attr("fill","#F5A9D0");
+
+      secundario_left.append("text")
+      .attr("x", "20%")
+      .attr("y", "65%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','7')      
+      .text("Shoyru, 17,502,588 ejemplares")
+      
+        
+        
+        
+        //krawk
+
+      secundario_left.append("circle")
+      .attr("cx","80%")
+      .attr("cy","50%")
+      .attr("r","0.01")
+      .attr("fill","#F5A9D0");
+
+      secundario_left.append("text")
+      .attr("x", "80%")
+      .attr("y", "65%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','7')      
+      .text("Krawk, 2,551 ejemplares")
+   
+        
+    // esro era inicialmente un grafico de torta (impopularidad), pero no logré que se viera, funcionaba en otras páginas.
+    // var w = 500, h = 400, radius = 210;
+    // var neoimpopulares = [
+   // {especie: "Hissi", cantidad: 355763, color: '#F5A9D0'},
+   // {especie: "Vandagyre", cantidad: 151565, color: '#F7819F'},
+   // {especie: "Lutari", cantidad: 116488, color: '#FA5882'},
+   // {especie: "Draik", cantidad: 65417, color: '#FE2E64'},
+   // {especie: "Krawk", cantidad: 2551, color: '#8A0829'},
+   // ];
+    
+   // var arc = d3.arc().outerRadius(radius - 50).innerRadius(0);
+    
+   // var pie = d3.pie().sort(null).value(function(d) { return d.cantidad; });
+
+   // var svg = d3.select('#here').append("svg")
+    //  .attr("width", w)
+    //  .attr("height", h)
+   //   .style("background","#EEEEEE")
+    //  .append("g")
+    //  .attr("transform", "translate(" + w/2 + "," + h/2 + ")");
+
+    //var g = svg.selectAll(".arc")
+    //  .data(pie(neoimpopulares))
+    //  .enter().append("g");    
+    
+   // g.append("path")
+    //  .attr("d", arc)
+    //  .style("fill", function(d,i) { return d.data.color; });
+    
+   // g.append("text")
+    //  .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+    //  .style("text-anchor", "middle")
+    //  .text(function(d) { return d.data.especie; })
+    //  .attr("fill","#FAFAFA")
+     // .style("font-size","9px")
+        
+    </script>
+    
+    <!--tercera visualización-->
+      <script>
+ var secundario_right = d3.select("#secundario_right")
+      .append("svg")
+      .attr("width","100%")
+      .attr("height","400")
+      .style("background-color","#BABABA");
+
+//Krawkc
+
+      secundario_right.append("circle")
+      .attr("cx","42%")
+      .attr("cy","50%")
+      .attr("r","2.1")
+      .attr("fill","#BCF5A9");
+
+      secundario_right.append("text")
+      .attr("x", "42%")
+      .attr("y", "60%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')      
+      .text("Krawk")
+
+//Draikc
+
+      secundario_right.append("circle")
+      .attr("cx","14%")
+      .attr("cy","50%")
+      .attr("r","6.5")
+      .attr("fill","#D0FA58");
+
+      secundario_right.append("text")
+      .attr("x", "14%")
+      .attr("y", "60%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')
+      .text("Draik")
+
+//Lutaric
+
+      secundario_right.append("circle")
+      .attr("cx","28%")
+      .attr("cy","50%")
+      .attr("r","11")
+      .attr("fill","#F4FA58");
+
+      secundario_right.append("text")
+      .attr("x", "28%")
+      .attr("y", "60%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')      
+      .text("Lutari")
+
+//Vandagyrec
+
+      secundario_right.append("circle")
+      .attr("cx","56%")
+      .attr("cy","50%")
+      .attr("r","15")
+      .attr("fill","#FFBF00");
+
+      secundario_right.append("text")
+      .attr("x", "56%")
+      .attr("y", "60%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')      
+      .text("Vandagyre")
+
+
+
+          
+          //Vandagyre%
+
+      secundario_right.append("circle")
+      .attr("cx","56%")
+      .attr("cy","30%")
+      .attr("r","5")
+      .attr("fill","#FFBF00");
+
+      secundario_right.append("text")
+      .attr("x", "56%")
+      .attr("y", "20%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')      
+      .text("0.05%")
+          
+          //Lutari%
+
+      secundario_right.append("circle")
+      .attr("cx","28%")
+      .attr("cy","30%")
+      .attr("r","4")
+      .attr("fill","#F4FA58");
+
+      secundario_right.append("text")
+      .attr("x", "28%")
+      .attr("y", "20%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')      
+      .text("0.04%")
+          
+          //Draik%
+
+      secundario_right.append("circle")
+      .attr("cx","14%")
+      .attr("cy","30%")
+      .attr("r","2")
+      .attr("fill","#D0FA58");
+
+      secundario_right.append("text")
+      .attr("x", "14%")
+      .attr("y", "20%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')
+      .text("0.02%")
+          
+          //Krawkc
+
+      secundario_right.append("circle")
+      .attr("cx","42%")
+      .attr("cy","30%")
+      .attr("r","1")
+      .attr("fill","#BCF5A9");
+
+      secundario_right.append("text")
+      .attr("x", "42%")
+      .attr("y", "20%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','9')      
+      .text("0.01%")
+          
+            //total
+
+      secundario_right.append("circle")
+      .attr("cx","80%")
+      .attr("cy","40%")
+      .attr("r","100")
+      .attr("fill","#BCF5A9");
+
+      secundario_right.append("text")
+      .attr("x", "80%")
+      .attr("y", "40%")
+      .attr("fill","#111111")
+      .attr('text-anchor','middle')
+      .attr('font-size','11')      
+      .text("100% - 284.025.762 de Neopets")
+    </script>
+
+  </body>
+</html>
